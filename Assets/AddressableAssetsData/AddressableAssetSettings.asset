@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468a46d0ae32c3544b7d98094e6448a9, type: 3}
+  m_Name: AddressableAssetSettings
+  m_EditorClassIdentifier: 
+  m_DefaultGroup: 1997e8b650eb94747b21ffba32873af1
+  m_BuildRemoteCatalog: 1
+  m_BundleLocalCatalog: 0
+  m_DisableCatalogUpdateOnStart: 0
+  m_UniqueBundleIds: 0
+  m_RemoteCatalogBuildPath:
+    m_Id: b11af6a39eb542e42be7bde54ebc17d5
+  m_RemoteCatalogLoadPath:
+    m_Id: 565270b93d5f227439a921a85fb5a2c5
+  m_overridePlayerVersion: 
+  m_GroupAssets:
+  - {fileID: 11400000, guid: b67ec019f41971f48bd27fa0611f5685, type: 2}
+  - {fileID: 11400000, guid: 874d41527afae704d9efc26ea1561dc5, type: 2}
+  m_BuildSettings:
+    m_CompileScriptsInVirtualMode: 0
+    m_CleanupStreamingAssetsAfterBuilds: 1
+    m_LogResourceManagerExceptions: 0
+    m_BundleBuildPath: Temp/com.unity.addressables/AssetBundles
+  m_ProfileSettings:
+    m_Profiles:
+    - m_InheritedParent: 
+      m_Id: 3261bbbd0cd5704448ff0c3a6178cc7a
+      m_ProfileName: Default
+      m_Values:
+      - m_Id: 4714051c40f47a747a40c36ba0360ba3
+        m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
+      - m_Id: 7a22daa2eb1b6c142a7a986e396514bb
+        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
+      - m_Id: 1937a79b5083a3847a81bb7bbac3e274
+        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+      - m_Id: b11af6a39eb542e42be7bde54ebc17d5
+        m_Value: ServerData/[BuildTarget]
+      - m_Id: 565270b93d5f227439a921a85fb5a2c5
+        m_Value: https://raw.githubusercontent.com/enjoythevibes/StockMarket-Test/main/ServerData/[BuildTarget]
+    m_ProfileEntryNames:
+    - m_Id: 4714051c40f47a747a40c36ba0360ba3
+      m_Name: BuildTarget
+      m_InlineUsage: 0
+    - m_Id: 7a22daa2eb1b6c142a7a986e396514bb
+      m_Name: LocalBuildPath
+      m_InlineUsage: 0
+    - m_Id: 1937a79b5083a3847a81bb7bbac3e274
+      m_Name: LocalLoadPath
+      m_InlineUsage: 0
+    - m_Id: b11af6a39eb542e42be7bde54ebc17d5
+      m_Name: RemoteBuildPath
+      m_InlineUsage: 0
+    - m_Id: 565270b93d5f227439a921a85fb5a2c5
+      m_Name: RemoteLoadPath
+      m_InlineUsage: 0
+    m_ProfileVersion: 1
+  m_LabelTable:
+    m_LabelNames:
+    - default
+  m_SchemaTemplates: []
+  m_GroupTemplateObjects:
+  - {fileID: 11400000, guid: 9522cebd3fce7fa42b0a6c766839b7d1, type: 2}
+  m_InitializationObjects: []
+  m_CertificateHandlerType:
+    m_AssemblyName: 
+    m_ClassName: 
+  m_ActivePlayerDataBuilderIndex: 3
+  m_DataBuilders:
+  - {fileID: 11400000, guid: e6daeb80ca91ea84da97b151afac01f4, type: 2}
+  - {fileID: 11400000, guid: 32e200cb965bef84e861346bbf3535bd, type: 2}
+  - {fileID: 11400000, guid: 5d22a5e7a2c80754289c818530745b80, type: 2}
+  - {fileID: 11400000, guid: 5c552254cb963534f8d1f912f32e43e2, type: 2}
+  m_ActiveProfileId: 3261bbbd0cd5704448ff0c3a6178cc7a
+  m_HostingServicesManager:
+    m_HostingServiceInfos: []
+    m_Settings: {fileID: 11400000}
+    m_NextInstanceId: 2
+    m_RegisteredServiceTypeRefs:
+    - UnityEditor.AddressableAssets.HostingServices.HttpHostingService, Unity.Addressables.Editor
