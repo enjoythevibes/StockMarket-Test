@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a582496612d969a4281f7737ae38256c, type: 3}
   m_Name: MarketItemsWindowConfig
   m_EditorClassIdentifier: 
-  marketItemsDataRemoteURL: https://raw.githubusercontent.com/enjoythevibes/StockMarket-Test/main/Data.json
+  marketItemsDataRemoteURL: https://raw.githubusercontent.com/enjoythevibes/StockMarket-Test/master/ServerData/MarketItemsData.json
   marketItemEntityPrefab: {fileID: 2620208069101371160, guid: 90f0528f3d06f7148ac7510e580e2e6c, type: 3}
-  rowsPreloaded: 6
+  rowsPreloaded: 3
