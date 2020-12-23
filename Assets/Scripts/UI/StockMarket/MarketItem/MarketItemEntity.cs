@@ -4,11 +4,10 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.AddressableAssets;
-using UnityEngine.Networking;
 
 namespace StockMarket.UI.StockMarket.MarketItem
 {
-    public class MarketItemEntity : MonoBehaviour
+    public class MarketItemEntity : MonoBehaviour, IMarketItemEntity
     {
         [SerializeField] private MarketItemNames marketItemNames = default;
         [SerializeField] private UserAvatarsCache userAvatarsCache = default;
@@ -20,7 +19,14 @@ namespace StockMarket.UI.StockMarket.MarketItem
         [SerializeField] private Image itemImage = default;
         private string userAvatarImageURL;
 
-        public IEnumerator SetMarketItemDataAsync(MarketItemData marketItemData) // Изменить на обычный метод который возвращает корутину
+        public Transform MarketItemTransform => transform;
+
+        public Coroutine SetMarketItemDataAsync(MarketItemData marketItemData)
+        {
+            return StartCoroutine(LoadAndSetItemDataAsync(marketItemData));
+        }
+
+        private IEnumerator LoadAndSetItemDataAsync(MarketItemData marketItemData)
         {
             var loadItemImageAsync = Addressables.LoadAssetAsync<Sprite>(marketItemData.ItemType);
             userAvatarImageURL = marketItemData.UserAvatarURL;

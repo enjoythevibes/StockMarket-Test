@@ -27,13 +27,13 @@ namespace StockMarket.UI.StockMarket.MarketItemNamesLoader
                 foreach (var line in marketItemNamesData.MarketItemNames)
                 {
                     var data = line.Split('=').Select(x => x.Trim()).ToArray();
-                    var objectType = data[0];
-                    var objectName = data[1];
-                    marketItemNamesDictionary.Add(objectType, objectName);
+                    var itemType = data[0];
+                    var itemName = data[1];
+                    marketItemNamesDictionary.Add(itemType, itemName);
                 }                
                 marketItemNames.Init(marketItemNamesDictionary);
-                Debug.Log("Result " + marketItemNames["Corn"]);
                 Addressables.Release(obj);
+                Destroy(gameObject);                
             };
         }
     }

@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace StockMarket.UI.StockMarket.MarketItem
 {
@@ -21,7 +20,7 @@ namespace StockMarket.UI.StockMarket.MarketItem
                 }
                 else
                 {
-                    Debug.LogError($"Item with {itemType} not found.");
+                    Debug.LogError($"Item with {itemType} type not found.");
                     return "Null";
                 }
             }
@@ -30,7 +29,6 @@ namespace StockMarket.UI.StockMarket.MarketItem
         public void Init(Dictionary<string, string> marketItemNames)
         {
             this.marketItemNames = marketItemNames;
-            Debug.Log(Initialized + " init?");
             Initialized = true;
         }
 

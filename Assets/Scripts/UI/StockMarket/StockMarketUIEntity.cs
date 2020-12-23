@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using StockMarket.UI.StockMarket.MarketItemsWindow;
+﻿using StockMarket.UI.StockMarket.MarketItemsWindow;
 using UnityEngine;
 
 namespace StockMarket.UI.StockMarket
@@ -11,7 +9,7 @@ namespace StockMarket.UI.StockMarket
 
         private void Awake()
         {
-            marketItemsWindowEntity.Init();    
+            marketItemsWindowEntity.OpenWindow();    
         }
 
         public void CloseStockMarketUI()

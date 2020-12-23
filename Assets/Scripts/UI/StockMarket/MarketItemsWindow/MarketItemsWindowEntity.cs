@@ -15,11 +15,11 @@ namespace StockMarket.UI.StockMarket.MarketItemsWindow
         [SerializeField] private GameObject loadingField = default;
         private ScrollRect scrollRect;
         private MarketItemsData marketItemsData;
-        private List<MarketItemEntity> marketItemEntities = new List<MarketItemEntity>();
+        private List<IMarketItemEntity> marketItemEntities = new List<IMarketItemEntity>();
 
         public override ScrollRect ScrollRect => scrollRect;
         
-        public override void Init()
+        public override void OpenWindow()
         {
             StartCoroutine(LoadJsonDataFromServer(marketItemsWindowConfig.MarketItemsDataRemoteURL, 
             (data) => 
@@ -45,7 +45,7 @@ namespace StockMarket.UI.StockMarket.MarketItemsWindow
             }
             for (int i = 0; i < count; i++)
             {
-                marketItemEntities[i].transform.localScale = Vector2.one;
+                marketItemEntities[i].MarketItemTransform.localScale = Vector2.one;
             }
             loadingField.SetActive(false);
             yield return null;
@@ -61,7 +61,7 @@ namespace StockMarket.UI.StockMarket.MarketItemsWindow
             marketItemEntities.Add(marketItemEntity);
             if (async)
                 marketItemEntity.transform.localScale = Vector3.zero;
-            yield return StartCoroutine(marketItemEntity.SetMarketItemDataAsync(marketItemsData.MarketItems[index]));
+            yield return marketItemEntity.SetMarketItemDataAsync(marketItemsData.MarketItems[index]);
         }
         
         private IEnumerator LoadJsonDataFromServer(string url, Action<string> executeAfterLoad)
@@ -76,7 +76,7 @@ namespace StockMarket.UI.StockMarket.MarketItemsWindow
             else
             {
                 var data = webRequest.downloadHandler.text;
-                Debug.Log("Load " + data);
+                Debug.Log("Json data: " + data);
                 executeAfterLoad.Invoke(data);
             }
             webRequest.Dispose();
