@@ -33,7 +33,6 @@ namespace StockMarket.UI.StockMarket.MarketItemsWindow
         private IEnumerator SpawnMarketItems()
         {
             var count = marketItemsData.MarketItems.Length;
-            if (count > marketItemsWindowConfig.RowsPreloaded * 2) count = marketItemsWindowConfig.RowsPreloaded * 2;
             var coroutines = new Coroutine[count];
             for (int i = 0; i < count; i++)
             {
@@ -48,19 +47,13 @@ namespace StockMarket.UI.StockMarket.MarketItemsWindow
                 marketItemEntities[i].MarketItemTransform.localScale = Vector2.one;
             }
             loadingField.SetActive(false);
-            yield return null;
-            for (int i = count - 1; i < marketItemsData.MarketItems.Length; i++)
-            {
-                StartCoroutine(SpawnMarketItemAsync(i, false));
-            }
         }
 
-        private IEnumerator SpawnMarketItemAsync(int index, bool async = true)
+        private IEnumerator SpawnMarketItemAsync(int index)
         {
-            var marketItemEntity = Instantiate(marketItemsWindowConfig.MarketItemEntityPrefab, Vector2.zero, Quaternion.identity, marketItemsWindowContent).GetComponent<MarketItemEntity>();
+            var marketItemEntity = Instantiate(marketItemsWindowConfig.MarketItemEntityPrefab, Vector2.zero, Quaternion.identity, marketItemsWindowContent).GetComponent<IMarketItemEntity>();
             marketItemEntities.Add(marketItemEntity);
-            if (async)
-                marketItemEntity.transform.localScale = Vector3.zero;
+            marketItemEntity.MarketItemTransform.localScale = Vector3.zero;
             yield return marketItemEntity.SetMarketItemDataAsync(marketItemsData.MarketItems[index]);
         }
         

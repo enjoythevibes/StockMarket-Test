@@ -10,10 +10,8 @@ namespace StockMarket.UI.StockMarket.MarketItemsWindow
         [TextArea]
         [SerializeField] private string marketItemsDataRemoteURL = "https://raw.githubusercontent.com/enjoythevibes/StockMarket-Test/main/Data.json";
         [SerializeField] private GameObject marketItemEntityPrefab = default;
-        [SerializeField] private int rowsPreloaded = 6;
 
         public string MarketItemsDataRemoteURL => marketItemsDataRemoteURL;
         public GameObject MarketItemEntityPrefab => marketItemEntityPrefab;
-        public int RowsPreloaded => rowsPreloaded;
     }
 }
